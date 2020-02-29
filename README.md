@@ -3,7 +3,7 @@
 1. [First Application](./chap1_FirstApplication/index.html)
 2. [Development Tools](./chap2_DevelopmentTools/developmentTools.md)
 3. [Data Types](./chap3_DataTypes/dataTypes.md)
-4. [Control Flow 작업중](./chatp4_ControlFlow/controlFlow.md)
+4. [Control Flow 작업 중](./chatp4_ControlFlow/controlFlow.md)
 5. Expressions and Operators
 6. Functions
 7. Scope
