@@ -41,12 +41,12 @@ JavaScript에서 값은 원시 자료형 또는 객체이다.
 
 ## 원시 자료형 (Primitive Types)
 
-* 종류: [Numbers](#Numbers), [String](#String), [Boolean](#Boolean), [Null and Undefined](#Null-and-Undefined), [Symbols](#Symbols)
+* 종류: [Numbers](#Numbers), [String](#String), Boolean, [Null and Undefined](#Null-and-Undefined), [Symbols](#Symbols)
 * 값을 변경할 수 없음
 
 ## 객체 (Objects)
 
-* 종류: [Array, Date, RegExp, Map and WeakMap, Set and WeakSet
+* 종류: [Arrays](#Arrays), Date, RegExp, Map and WeakMap, Set and WeakSet
 * 원시 자료형과 다르게 다른 타입의 값을 가질 수 있음
 
 # 숫자 (Numbers)
@@ -141,27 +141,114 @@ const multiline = 'Current temperature:\n' +
 "Don't worry...the heat is on!";
 ```
 
-# Booleans
-
-
-
 # Symbols
+
+JavaScript에서는 _symbols_라는 고유한 토큰을 뜻하는 새로운 데이터 타입을 제공한다.
+
+``` js
+const RED = Symbol();
+const ORANGE = Symbol("The color of a sunset!");
+RED == ORANGE; // false
+```
 
 # Null and Undefined
 
-# Objects
+자바스크립트의 null은 아무런 값도 나타내지 않는 특수한 값이다.
+undefined는 선언은 되었지만 값이 할당된 적이 없는 변수에 접근하거나, 존재하지않는 객체 프로퍼티에 접근할 경우 반환되는 값이다.
 
-# Number, String and Boolean Objects
+출처: https://devsh.tistory.com/entry/null-과-undefined-의-차이 [날샘 코딩]
 
-# Arrays
+저자는 undefined를 사용하는 것보다 null을 사용하는 것을 추천한다. 
 
-# Trailing Commas in Objects and Arrays
+# 객체 (Objects)
 
-# Dates
+객체는 중괄호({})를 이용하여 선언한다. 객체는 여러 타입의 데이터를 가질 수 있고, key와 value를 갖는다. 여기서 key로 Symbol 타입도 사용할 수 있다. 
 
-# Regular Expressions
+``` js
+const obj = {};
 
-# Map and Sets
+// 객체에 속성(property)를 준다.
+obj.size;
+obj.color;
+
+obj[key] = value;
+obj[key]; // value
+
+const SIZE = Symbol();
+obj[SIZE] = 8;
+```
+
+객체는 중괄호 안에서 쉼표(,)에 의해 속성이 구분되고, 이 때 속성은 다른 원시 자료형(primitive types)를 가질 수 있다. 
+
+``` js
+const sam3 = { name: 'Sam',
+    classification: {
+        kingdom: 'Anamalia',
+        phylum: 'Chordata',
+        class: 'Mamalia',
+        order: 'Carnivoria',
+        family: 'Felidae',
+        subfaimily: 'Felinae',
+        genus: 'Felis',
+        species: 'catus',
+}, };
+
+sam3.classification.family;
+sam3["classification"].family;
+sam3.classification["family"];
+sam3["classification"]["family"];
+```
+
+객체는 함수 또한 속성으로 가질 수 있다.
+
+``` js
+sam3.speak = function(){ return "Meow!"; };
+```
+
+속성을 지우고 싶을 때는 `delete` 연산자를 이용한다.
+
+``` js
+delete sam3.classification;
+delete sam3.speak;
+```
+
+# 숫자, 문자열 그리고 불리언 객체 (Number, String and Boolean Objects)
+
+ JavaScript는 원시 자료형에 대해 일시적인 객체를 생성한다. 따라서, 아래와 같이 원시 자료형을 선언했음에도 불구하고 객체처럼 사용할 수 있다. 
+
+ ``` js
+ const s = "hello";
+ s.rating = 3;
+ ```
+
+# 배열 (Arrays)
+
+배열은 JavaSript 객체 중, key가 숫자이고 연속적인 특수한 타입이다. 배열의 사이즈는 고정되어 있지 않고, 서로 다른 타입을 원소로 가질 수 있다. 또한, zero-based 이기 때문에 배열의 첫 번째 원소는 0이다. 배열을 표현할 때에는 대괄호 `[]`를 사용한다. 
 
 # Data Type Conversion
 
+**숫자로 변환**
+
+``` js
+const a = parseInt("16 volts", 10);
+console.log(a); // 16
+const b = parseInt("3a", 16);
+console.log(b); // 58
+const c = parseFloat("15.5 kph");
+console.log(c); // 15.5
+```
+
+**문자열로 변환**
+
+``` js
+const n = 33.5;
+const s = n.toString();
+```
+
+**불리언으로 변환**
+
+``` js
+const n = 0; // truty | falsy value
+const b1 = !!n; // false 
+const b2 = Boolean(n); // false
+```
