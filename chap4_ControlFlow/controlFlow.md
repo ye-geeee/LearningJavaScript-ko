@@ -81,16 +81,16 @@ _Metasyntax_이라는 용어는 차례로 또 다른 구문을 설명하거나 �
 
 **Example**
 
-while(condition)
+while(condition)  
     statement
 
-if(condition)
-    statement1
-[else
+if(condition)  
+    statement1  
+[else  
     statement2]
 
-do
-    statement
+do  
+    statement  
 while(condition);
 
 for([initialization]; [condition]; [final-expression])
@@ -98,8 +98,8 @@ for([initialization]; [condition]; [final-expression])
 
 # 추가 for Loop 패턴
 
-for(variable in object)
+for(variable in object)  
     statement
 
-for(variable of object)
+for(variable of object)  
     statement
