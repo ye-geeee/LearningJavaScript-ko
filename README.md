@@ -4,7 +4,7 @@
 2. [Development Tools](./chap2_DevelopmentTools/developmentTools.md)
 3. [Data Types](./chap3_DataTypes/dataTypes.md)
 4. [Control Flow](./chap4_ControlFlow/controlFlow.md)
-5. Expressions and Operators
+5. [Expressions and Operators 작업 중](./chap5_ExpressionsAndOperators/expressionsOperators.md)
 6. Functions
 7. Scope
 8. Arrays and Array Processing
