@@ -82,24 +82,24 @@ _Metasyntax_이라는 용어는 차례로 또 다른 구문을 설명하거나 �
 **Example**
 
 while(condition)  
-    statement
+&emsp;statement
 
 if(condition)  
-    statement1  
+&emsp;statement1  
 [else  
-    statement2]
+&emsp;statement2]
 
 do  
-    statement  
+&emsp;statement  
 while(condition);
 
 for([initialization]; [condition]; [final-expression])
-    statement
+&emsp;statement
 
 # 추가 for Loop 패턴
 
 for(variable in object)  
-    statement
+&emsp;statement
 
 for(variable of object)  
-    statement
+&emsp;statement
